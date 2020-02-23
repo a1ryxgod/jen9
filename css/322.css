@@ -1,88 +1,235 @@
-*{
-  margin: 0;  
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.container{
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
-    }
-body{
-    font-family: Arial, Helvetica, sans-serif;
-
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
-
-.header{
-    display: flex;
-    justify-content: space-between;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    align-items: center;
-    }
-    
-.logo{
-
-
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  align-items: center;
 }
-.letter{
-    color: aqua;
+
+.logo {
 }
-.letter--big{
-text-transform: uppercase;
-
+.letter {
+  color: aqua;
 }
-.list{
-list-style: none;
-display: flex;
-
-
+.letter--big {
+  text-transform: uppercase;
 }
-.link{
-text-decoration: none;
-color: aqua;
-text-transform: uppercase;
-font-weight: bold;
-padding: 10px 15px;
-
+.list {
+  list-style: none;
+  display: flex;
 }
-.link--active{
-   color: tomato ;
-
-
+.link {
+  text-decoration: none;
+  color: aqua;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 15px;
 }
-.list-iteem{
-margin-right: 20px;
-
+.link--active {
+  color: tomato;
 }
-.nav{
-
+.list-iteem {
+  margin-right: 20px;
 }
-.heading-3{
-
+.nav {
 }
-.heading-2{
-text-transform: uppercase
-
+.heading-3 {
+  margin-top: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.line{
-width: 60px;
-height: 4px;
-background-color: tomato;
-margin-top: 40px;
-margin-bottom: 40px;
-
-
+.heading-2 {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.para{
-text-align: center
-
-
+.mother-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.card{
-display: flex;
-flex-direction: column;
+.line {
+  width: 60px;
+  height: 4px;
+  background-color: tomato;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.para {
+  text-align: center;
+}
 
+.amazing {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.amazing-iteems {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: calc((100% / 3) - 70px);
+  flex-wrap: wrap;
+}
+img {
+  width: 35px;
+  height: 35px;
+}
+h2 {
+  text-transform: uppercase;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% / 3);
+  height: 475px;
+  position: relative;
+}
+
+.card:hover .card-content {
+  top: -40px;
+  left: -40px;
+}
+
+.card-content {
+  object-fit: cover;
+  max-width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.card-content .image {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content > .wrapper:after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(254, 225, 64, 0.5);
+
+  opacity: 0;
+}
+
+.card-content:hover > .wrapper:after {
+  opacity: 0.5;
+}
+
+.card-content > .wrapper .icon {
+  width: 10px;
+  height: 10px;
+}
+
+.card-content > .wrapper .list {
+  list-style: none;
+  display: flex;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.card-content:hover > .wrapper .list {
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+}
+
+/*
+  * Ссылка с соц сетями
+  */
+.card-content > .wrapper .list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  width: 55px;
+  height: 55px;
+  margin-right: 2px;
+
+  transition: 0.3s ease-in-out;
+}
+
+/*
+  * Эффект наведения на ссылку с соц. сетями
+  */
+.card-content > .wrapper .list-item:hover {
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
+
+/*
+  * Обертка со списком и градиентом
+  */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/*
+  * Подложка
+  */
+.card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: lightblue;
+  z-index: -1;
 }
